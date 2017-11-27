@@ -1,0 +1,23 @@
+{
+  "name": "build-your-own-js-array-challenge",
+  "version": "1.0.0",
+  "description": "Build an array out of plain class in JS.",
+  "main": "array.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonrey/build-your-own-js-array-challenge.git"
+  },
+  "author": "JSON object <jsonobject@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonrey/build-your-own-js-array-challenge/issues"
+  },
+  "homepage": "https://github.com/jasonrey/build-your-own-js-array-challenge#readme",
+  "devDependencies": {
+    "ava": "^0.23.0",
+    "standard": "^10.0.3"
+  }
+}
