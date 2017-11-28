@@ -19,6 +19,7 @@ test('fill() returns the array', t => {
   array.push(4)
   result.push(5)
 
+  t.true(result instanceof CustomArray)
   t.is(array.length, 5)
   t.is(array[3], 4)
   t.is(array[4], 5)
@@ -53,7 +54,7 @@ test('fill(value) all elements as value', t => {
   t.is(array[2], 'a')
 })
 
-test('fill(value, start) from start (0 < start < length)', t => {
+test('fill(value, start) from start < length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -68,7 +69,7 @@ test('fill(value, start) from start (0 < start < length)', t => {
   t.is(array[4], 'a')
 })
 
-test('fill(value, start) from start (start > length', t => {
+test('fill(value, start) from start > length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -83,7 +84,7 @@ test('fill(value, start) from start (start > length', t => {
   t.is(array[4], 5)
 })
 
-test('fill(value, -start) from start (-length < -start < 0)', t => {
+test('fill(value, -start) from -start > -length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -98,7 +99,7 @@ test('fill(value, -start) from start (-length < -start < 0)', t => {
   t.is(array[4], 'a')
 })
 
-test('fill(value, -start) from -start index (-start < -length)', t => {
+test('fill(value, -start) from -start < -length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -113,7 +114,7 @@ test('fill(value, -start) from -start index (-start < -length)', t => {
   t.is(array[4], 'a')
 })
 
-test('fill(value, start, end) from start to end (0 < start < end < length', t => {
+test('fill(value, start, end) from start < end < length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -128,7 +129,7 @@ test('fill(value, start, end) from start to end (0 < start < end < length', t =>
   t.is(array[4], 5)
 })
 
-test('fill(value, start, end) from start to end (0 < end < start < length', t => {
+test('fill(value, start, end) from end < start < length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -143,7 +144,7 @@ test('fill(value, start, end) from start to end (0 < end < start < length', t =>
   t.is(array[4], 5)
 })
 
-test('fill(value, start, -end) from start to -end (0 < start < end < length, -length < -end)', t => {
+test('fill(value, start, -end) from -length < -end < start < end < length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -158,7 +159,7 @@ test('fill(value, start, -end) from start to -end (0 < start < end < length, -le
   t.is(array[4], 5)
 })
 
-test('fill(value, start, -end) from start to -end (-end < -length < 0 < start < length)', t => {
+test('fill(value, start, -end) from -end < -length < start < length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -173,7 +174,7 @@ test('fill(value, start, -end) from start to -end (-end < -length < 0 < start < 
   t.is(array[4], 5)
 })
 
-test('fill(value, -start, end) from -start to end (-length < -start < 0 < start < end < length)', t => {
+test('fill(value, -start, end) from -length < -start < start < end < length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -188,7 +189,7 @@ test('fill(value, -start, end) from -start to end (-length < -start < 0 < start 
   t.is(array[4], 5)
 })
 
-test('fill(value, -start, end) from -start to end (-start < -length < 0 < start < end < length)', t => {
+test('fill(value, -start, end) from -start < -length < start < end < length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -203,7 +204,7 @@ test('fill(value, -start, end) from -start to end (-start < -length < 0 < start 
   t.is(array[4], 5)
 })
 
-test('fill(value, -start, -end) from -start to -end (-length < -start < -end < 0)', t => {
+test('fill(value, -start, -end) from -length < -start < -end', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -218,7 +219,7 @@ test('fill(value, -start, -end) from -start to -end (-length < -start < -end < 0
   t.is(array[4], 5)
 })
 
-test('fill(value, -start, -end) from -start to -end (-length < -end < -start < 0)', t => {
+test('fill(value, -start, -end) from -length < -end < -start', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -233,7 +234,7 @@ test('fill(value, -start, -end) from -start to -end (-length < -end < -start < 0
   t.is(array[4], 5)
 })
 
-test('fill(value, -start, -end) from -start to -end (-start < -length < -end < 0)', t => {
+test('fill(value, -start, -end) from -start < -length < -end', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -248,7 +249,7 @@ test('fill(value, -start, -end) from -start to -end (-start < -length < -end < 0
   t.is(array[4], 5)
 })
 
-test('fill(value, -start, -end) from -start to -end (-start < -end < -length)', t => {
+test('fill(value, -start, -end) from -start < -end < -length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
@@ -263,7 +264,7 @@ test('fill(value, -start, -end) from -start to -end (-start < -end < -length)', 
   t.is(array[4], 5)
 })
 
-test('fill(value, -start, -end) from -start to -end (-end < -start < -length)', t => {
+test('fill(value, -start, -end) from -end < -start < -length', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)

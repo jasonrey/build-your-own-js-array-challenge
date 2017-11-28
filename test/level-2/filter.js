@@ -30,6 +30,16 @@ test('filter(test) returns new array that contains only elements that passes tes
 
   const returnedArray = array.filter(el => el > 5)
 
+  t.true(returnedArray instanceof CustomArray)
+})
+
+test('filter(test) returns new array that contains only elements that passes test(element)', t => {
+  const array = new CustomArray()
+
+  array.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+  const returnedArray = array.filter(el => el > 5)
+
   t.is(array.length, 10)
   t.is(returnedArray.length, 5)
   t.is(array[0], 1)

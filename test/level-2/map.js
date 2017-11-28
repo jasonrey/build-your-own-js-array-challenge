@@ -23,16 +23,23 @@ test('map() throws error if non function type is passed in', t => {
   t.throws(() => array.map(null), Error)
 })
 
-test('map(fn) returns new array with the same length', t => {
+test('map(fn) returns new array', t => {
   const array = new CustomArray()
 
-  const emptyArray = array.map(() => { })
-
-  t.is(emptyArray.length, 0)
+  const emptyArray = array.map(() => {})
 
   array.push('a', 'b', 'c')
 
-  const returnedArray = array.map(() => { })
+  t.true(emptyArray instanceof CustomArray)
+  t.is(emptyArray.length, 0)
+})
+
+test('map(fn) returns new array with the same length', t => {
+  const array = new CustomArray()
+
+  array.push('a', 'b', 'c')
+
+  const returnedArray = array.map(() => {})
 
   t.is(returnedArray.length, 3)
 })

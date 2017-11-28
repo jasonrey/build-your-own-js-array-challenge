@@ -30,6 +30,7 @@ test('every(test) does not mutate the array', t => {
 
   array.every(el => el > 5)
 
+  t.true(array instanceof CustomArray)
   t.is(array.length, 4)
   t.is(array[0], 6)
   t.is(array[1], 7)
