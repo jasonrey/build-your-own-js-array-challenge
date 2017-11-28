@@ -6,8 +6,8 @@ Build an array out of a plain class that implements length property and all comm
 
 - push
 - pop
-- shift
 - unshift
+- shift
 - join
 - toString
 - forEach
@@ -17,13 +17,13 @@ Build an array out of a plain class that implements length property and all comm
 - map
 - filter
 - every
+- some
+- includes
 - fill
-- reverse
 
 ## Level 3
 
-- includes
-- some
+- reverse
 - find
 - findIndex
 - indexOf
@@ -39,9 +39,9 @@ Build an array out of a plain class that implements length property and all comm
 
 ## Level 5
 
+- iterator
 - entries
 - copyWithin
 - concat
-- iterator
 - keys
 - values
