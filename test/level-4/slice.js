@@ -1,6 +1,14 @@
 const { test } = require('ava')
 const CustomArray = require('../../array')
 
+test('slice is a prototype function', t => {
+  const array = new CustomArray()
+
+  t.is(CustomArray.slice, undefined)
+  t.is(typeof CustomArray.prototype.slice, 'function')
+  t.is(typeof array.slice, 'function')
+})
+
 test('slice() returns a new shallow copy of array', t => {
   const array = new CustomArray()
 

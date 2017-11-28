@@ -30,7 +30,6 @@ test('reverse() mutates and reverses an array (odd)', t => {
 
   array.reverse()
 
-  t.true(array instanceof CustomArray)
   t.is(array.length, 5)
   t.is(array[0], 5)
   t.is(array[1], 4)
