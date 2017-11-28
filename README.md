@@ -19,7 +19,6 @@ Build an array out of a plain class that implements length property and all comm
 - every
 - some
 - includes
-- fill
 
 ## Level 3
 
@@ -28,6 +27,7 @@ Build an array out of a plain class that implements length property and all comm
 - findIndex
 - indexOf
 - lastIndexOf
+- fill
 
 ## Level 4
 
