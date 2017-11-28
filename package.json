@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/jasonrey/build-your-own-js-array-challenge#readme",
   "devDependencies": {
-    "ava": "^0.23.0",
+    "ava": "^0.24.0",
     "standard": "^10.0.3"
   }
 }
