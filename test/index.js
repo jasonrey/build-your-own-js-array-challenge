@@ -1,11 +1,20 @@
-const {test} = require('ava')
+const { test } = require('ava')
+const CustomArray = require('../array')
 
-test.todo('Array length returns 0 for empty array')
+test('Array length returns 0 for new/empty array', t => {
+  const array = new CustomArray()
 
-test.todo('Array length returns 1 for array with 1 element')
+  t.is(array.length, 0)
+})
 
-test.todo('Array length returns > 1 for array > 1 element')
+test('Array length returns 1 for new array constructed with length 1', t => {
+  const array = new CustomArray(1)
 
-test.todo('Array[index] returns the value at specified index')
+  t.is(array.length, 1)
+})
 
-test.todo('Array[index] returns undefined if there is no such index')
+test('Array length returns 2 for new array constructed with length 2', t => {
+  const array = new CustomArray(2)
+
+  t.is(array.length, 2)
+})
