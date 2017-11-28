@@ -46,3 +46,53 @@ test('includes(value) returns false on array without value', t => {
 
   t.false(result)
 })
+
+test('includes(value, start) returns true on array containing value from start < length', t => {
+  const array = new CustomArray()
+
+  array.push('a', 'b', 'c', 'd', 'e')
+
+  const result = array.includes('d', 2)
+
+  t.true(result)
+})
+
+test('includes(value, start) returns false on array containing value before start < length', t => {
+  const array = new CustomArray()
+
+  array.push('a', 'b', 'c', 'd', 'e')
+
+  const result = array.includes('c', 3)
+
+  t.false(result)
+})
+
+test('includes(value, -start) returns true on array containing value from -start > -length', t => {
+  const array = new CustomArray()
+
+  array.push('a', 'b', 'c', 'd', 'e')
+
+  const result = array.includes('d', -2)
+
+  t.true(result)
+})
+
+test('includes(value, -start) returns false on array containing value before -start > -length', t => {
+  const array = new CustomArray()
+
+  array.push('a', 'b', 'c', 'd', 'e')
+
+  const result = array.includes('c', -1)
+
+  t.false(result)
+})
+
+test('includes(value, -start) returns true on array containing value from -start < -length', t => {
+  const array = new CustomArray()
+
+  array.push('a', 'b', 'c', 'd', 'e')
+
+  const result = array.includes('d', -7)
+
+  t.true(result)
+})

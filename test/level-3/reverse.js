@@ -9,7 +9,7 @@ test('reverse is a prototype function', t => {
   t.is(typeof array.reverse, 'function')
 })
 
-test('reverse() mutates and reverses an array', t => {
+test('reverse() mutates and reverses an array (even)', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4)
@@ -21,6 +21,21 @@ test('reverse() mutates and reverses an array', t => {
   t.is(array[1], 3)
   t.is(array[2], 2)
   t.is(array[3], 1)
+})
+
+test('reverse() mutates and reverses an array (odd)', t => {
+  const array = new CustomArray()
+
+  array.push(1, 2, 3, 4, 5)
+
+  array.reverse()
+
+  t.is(array.length, 5)
+  t.is(array[0], 5)
+  t.is(array[1], 4)
+  t.is(array[2], 3)
+  t.is(array[3], 2)
+  t.is(array[4], 1)
 })
 
 test('reverse() returns the reversed array', t => {
