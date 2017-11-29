@@ -14,6 +14,7 @@ Build an array out of a plain class that implements length property and all comm
 
 ## Level 2
 
+- concat
 - map
 - filter
 - every
@@ -41,7 +42,5 @@ Build an array out of a plain class that implements length property and all comm
 
 - iterator
 - entries
-- copyWithin
-- concat
 - keys
-- values
+- copyWithin
