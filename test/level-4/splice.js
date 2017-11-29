@@ -51,8 +51,8 @@ test('splice(-start) extracts partial array from -start', t => {
   const result = array.splice(-2)
 
   t.is(result.length, 2)
-  t.is(array[0], 4)
-  t.is(array[1], 5)
+  t.is(result[0], 4)
+  t.is(result[1], 5)
 
   t.is(array.length, 3)
   t.is(array[0], 1)
@@ -141,11 +141,11 @@ test('splice(start, length, ...item) adds item into the array at start, returns 
   t.is(array[0], 1)
   t.is(array[1], 2)
   t.is(array[2], 6)
-  t.is(array[2], 7)
-  t.is(array[2], 8)
-  t.is(array[2], 3)
-  t.is(array[2], 4)
-  t.is(array[2], 5)
+  t.is(array[3], 7)
+  t.is(array[4], 8)
+  t.is(array[5], 3)
+  t.is(array[6], 4)
+  t.is(array[7], 5)
 })
 
 test('splice(start, length, ...item) adds item into the array at start, extracts partial array with length', t => {
@@ -163,7 +163,7 @@ test('splice(start, length, ...item) adds item into the array at start, extracts
   t.is(array[0], 1)
   t.is(array[1], 2)
   t.is(array[2], 6)
-  t.is(array[2], 7)
-  t.is(array[2], 8)
-  t.is(array[2], 5)
+  t.is(array[3], 7)
+  t.is(array[4], 8)
+  t.is(array[5], 5)
 })
