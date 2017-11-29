@@ -62,7 +62,7 @@ test('copyWithin(target) with target > length', t => {
 
   array.push(1, 2, 3, 4, 5)
 
-  array.copyWithin(2)
+  array.copyWithin(7)
 
   t.is(array.length, 5)
   t.is(array[0], 1)
@@ -98,8 +98,8 @@ test('copyWithin(-target) with -target < -length', t => {
   t.is(array[0], 1)
   t.is(array[1], 2)
   t.is(array[2], 3)
-  t.is(array[3], 4)
-  t.is(array[4], 5)
+  t.is(array[3], 1)
+  t.is(array[4], 2)
 })
 
 test('copyWithin(target, start) with target < start < length', t => {

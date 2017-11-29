@@ -34,9 +34,9 @@ test('reduceRight(fn) uses value of first element on single element array as acc
 
   array.push(1)
 
-  array.reduceRight((acc, item) => {
-    t.is(acc, 1)
-  })
+  const result = array.reduceRight((acc, item) => acc)
+
+  t.is(result, 1)
 })
 
 test('reduceRight(fn) does not mutate the array', t => {

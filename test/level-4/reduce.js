@@ -34,9 +34,9 @@ test('reduce(fn) uses value of first element on single element array as accumula
 
   array.push(1)
 
-  array.reduce((acc, item) => {
-    t.is(acc, 1)
-  })
+  const result = array.reduce((acc, item) => acc)
+
+  t.is(result, 1)
 })
 
 test('reduce(fn) does not mutate the array', t => {

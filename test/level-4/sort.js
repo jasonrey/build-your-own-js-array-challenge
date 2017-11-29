@@ -9,14 +9,6 @@ test('sort is a prototype function', t => {
   t.is(typeof array.sort, 'function')
 })
 
-test('sort() throws error if non function type is passed in', t => {
-  const array = new CustomArray()
-
-  t.throws(() => array.sort(1), Error)
-  t.throws(() => array.sort('hello'), Error)
-  t.throws(() => array.sort(null), Error)
-})
-
 test('sort() mutates the array and sort ascendingly by default', t => {
   const array = new CustomArray()
 
@@ -49,6 +41,8 @@ test('sort(descending) sorts the array descendingly', t => {
   const array = new CustomArray()
 
   array.push(1, 2, 3, 4, 5)
+
+  array.sort((a, b) => a < b)
 
   t.is(array.length, 5)
   t.is(array[0], 5)
