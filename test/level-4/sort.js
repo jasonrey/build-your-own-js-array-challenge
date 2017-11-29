@@ -16,3 +16,44 @@ test('sort() throws error if non function type is passed in', t => {
   t.throws(() => array.sort('hello'), Error)
   t.throws(() => array.sort(null), Error)
 })
+
+test('sort() mutates the array and sort ascendingly by default', t => {
+  const array = new CustomArray()
+
+  array.push(5, 4, 3, 2, 1)
+
+  array.sort()
+
+  t.is(array.length, 5)
+  t.is(array[0], 1)
+  t.is(array[1], 2)
+  t.is(array[2], 3)
+  t.is(array[3], 4)
+  t.is(array[4], 5)
+})
+
+test('sort() returns the original array', t => {
+  const array = new CustomArray()
+
+  array.push(5, 4, 3, 2, 1)
+
+  const result = array.sort()
+
+  array.push(6)
+
+  t.is(result.length, 6)
+  t.is(array.length, 6)
+})
+
+test('sort(descending) sorts the array descendingly', t => {
+  const array = new CustomArray()
+
+  array.push(1, 2, 3, 4, 5)
+
+  t.is(array.length, 5)
+  t.is(array[0], 5)
+  t.is(array[1], 4)
+  t.is(array[2], 3)
+  t.is(array[3], 2)
+  t.is(array[4], 1)
+})
